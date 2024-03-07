@@ -73,6 +73,36 @@ The most recently watched titles are: (Show, rank)
 (Inception,32)(Code8,23)(Tenet,1)
 ```
 
+### Feature #4: Cache Management with LFU Replacement Strategy
+Similar to the caching mechanism in Feature #3, this replacement strategy substitues the least frequently accessed item with newly inserted ones when the data structure reaches capacity. In the event of a tie, the least recently accessed item is prioritized for replacement.
 
+```
+               Welcome to Video Streaming Platform
+1. Search for a show
+2. Display Top shows
+3. Display recently watched
+4. Display frequently watched shows
+5. Exit
+Select an option: 4
+The most frequently watched titles are: (Show, rank)
+(Tenet,1)(Inception,32)
+
+(Tenet,1)(Inception,32)(King,11)
+
+(Tenet,1)(Inception,32)(Maverick,44)
+
+1. Search for a show
+2. Display Top shows
+3. Display recently watched
+4. Display frequently watched shows
+5. Exit
+Select an option: 4
+The most frequently watched titles are: (Show, rank)
+(Tenet,1)(Inception,32)
+
+(Tenet,1)(Inception,32)(King,11)
+
+(Inception,32)(Maverick,44)(Tenet,1)
+```
 
 This project highlights the utilization of advanced data structures and algorithms in the context of media streaming services.

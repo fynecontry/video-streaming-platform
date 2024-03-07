@@ -6,7 +6,8 @@ func DisplayMenu() {
 	fmt.Println("1. Search for a show")
 	fmt.Println("2. Display Top shows")
 	fmt.Println("3. Display recently watched")
-	fmt.Println("4. Exit")
+	fmt.Println("4. Display frequently watched shows")
+	fmt.Println("5. Exit")
 	fmt.Print("Select an option: ")
 }
 
@@ -14,12 +15,12 @@ func ValidateInput() (bool, int) {
 	active := true
 	var choice int
 	fmt.Scan(&choice)
-	for choice < 1 || choice > 4 {
+	for choice < 1 || choice > 5 {
 		fmt.Printf("Invalid input (%d)!\n", choice)
 		DisplayMenu()
 		fmt.Scan(&choice)
 	}
-	if choice == 4 {
+	if choice == 5 {
 		active = false
 	}
 	return active, choice

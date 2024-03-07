@@ -17,6 +17,8 @@ func main() {
 			FetchTopShows()
 		case 3:
 			FetchMostRecentShows()
+		case 4:
+			FetchMostFrequentlyWatchedShows()
 		}
 		DisplayMenu()
 		active, userInput = ValidateInput()

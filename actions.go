@@ -53,6 +53,24 @@ func FetchMostRecentShows() {
 	cache.Print()
 }
 
+func FetchMostFrequentlyWatchedShows() {
+	cache := &LFUCache{capacity: 3, minFrequency: 1, cacheFrequency: make(map[int]*LinkedList), cache: make(map[string]*LinkedListNode)}
+	fmt.Println("The most frequently watched titles are: (Show, rank)")
+	cache.Set("Tenet", 1)
+	cache.Set("Inception", 32)
+	cache.Print()
+	cache.Get("Tenet")
+	cache.Set("King", 11)
+	cache.Print()
+	cache.Get("Inception")
+	cache.Set("Maverick", 44)
+
+	cache.Get("Tenet")
+	cache.Get("King")
+	cache.Get("Maverick")
+	cache.Print()
+}
+
 func Exit() {
 	fmt.Println("Goodbye!")
 }

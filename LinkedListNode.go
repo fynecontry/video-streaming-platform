@@ -5,10 +5,11 @@ import (
 )
 
 type LinkedListNode struct {
-	show string
-	rank int
-	next *LinkedListNode
-	prev *LinkedListNode
+	show      string
+	rank      int
+	frequency int
+	next      *LinkedListNode
+	prev      *LinkedListNode
 }
 
 type LinkedList struct {
@@ -109,6 +110,16 @@ func (l *LinkedList) RemoveHead() *LinkedListNode {
 
 func (l *LinkedList) RemoveTail() *LinkedListNode {
 	return l.RemoveNode(l.tail)
+}
+
+func (l *LinkedList) Append(node *LinkedListNode) {
+	if l.head == nil {
+		l.head = node
+	} else {
+		l.tail.next = node
+		node.prev = l.tail
+	}
+	l.tail = node
 }
 
 func display(head *LinkedListNode) {
